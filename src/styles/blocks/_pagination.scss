@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.pagination {
+  display: flex;
+  gap: to-rem(10);
+  margin-bottom: to-rem(80);
+
+  &__item,
+  &__dots {
+    width: to-rem(40);
+    height: to-rem(40);
+    @include flex(row, center, center);
+    border: to-rem(1) solid $border-color;
+    border-radius: to-rem(3);
+    font-size: to-rem(14);
+
+    &--active,
+    &:hover {
+      background: $black-color;
+      color: $white-color;
+      border-color: $black-color;
+    }
+  }
+}

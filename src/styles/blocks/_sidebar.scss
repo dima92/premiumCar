@@ -1,0 +1,112 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.widget {
+  margin-bottom: to-rem(50);
+
+  &__title {
+    font-size: to-rem(18);
+    font-weight: 700;
+    color: $title-color;
+    margin-bottom: to-rem(23);
+  }
+
+  &__desc {
+    font-size: to-rem(14);
+    line-height: 1.71;
+    color: $text-color;
+    margin-bottom: to-rem(19);
+  }
+}
+
+.author-widget {
+  &__img {
+    border-radius: to-rem(5);
+    margin-bottom: to-rem(20);
+    width: 100%;
+  }
+
+  &__name {
+    font-size: to-rem(18);
+    color: $title-color;
+    margin-bottom: to-rem(8);
+  }
+
+  &__role {
+    display: block;
+    font-size: to-rem(14);
+    font-style: italic;
+    color: #999;
+    margin-bottom: to-rem(14);
+  }
+
+  &__bio {
+    font-size: to-rem(15);
+    line-height: 1.67;
+    color: $text-color;
+    margin-bottom: to-rem(21);
+  }
+}
+
+.mini-post {
+  margin-bottom: to-rem(39);
+
+  &__img-wrap {
+    position: relative;
+    border-radius: to-rem(5);
+    overflow: hidden;
+    margin-bottom: to-rem(20);
+
+    img {
+      width: 100%;
+      height: to-rem(195);
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: to-rem(20);
+      left: to-rem(20);
+    }
+  }
+
+  &__title {
+    font-size: to-rem(20);
+    line-height: 1.4;
+    margin-bottom: to-rem(10);
+    color: $title-color;
+
+    @include hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.insta-grid {
+  @include grid(2, 10);
+  margin-bottom: to-rem(15);
+
+  img {
+    border-radius: to-rem(5);
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: to-rem(10);
+
+  .tag {
+    background: #ebebeb;
+    font-size: to-rem(14);
+    padding: to-rem(6) to-rem(14);
+    border-radius: to-rem(3);
+
+    @include hover {
+      background: $accent-color;
+      color: $white-color;
+    }
+  }
+}

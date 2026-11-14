@@ -1,0 +1,75 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.hero-grid {
+  @include grid(3, 30);
+  grid-template-rows: repeat(2, 265px);
+  margin: to-rem(30) 0 to-rem(80);
+
+  @include respond-to("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  @include respond-to("mobile") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-card {
+  position: relative;
+  border-radius: to-rem(5);
+  background-size: cover;
+  background-position: center;
+  padding: to-rem(30) to-rem(20);
+  @include flex(column, space-between);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 1;
+  }
+
+  .badge,
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .badge {
+    align-self: flex-start;
+  }
+
+  &__title {
+    color: $white-color;
+    font-weight: 700;
+    font-size: to-rem(20);
+    line-height: 1.5;
+  }
+
+  &--large {
+    grid-row: span 2;
+
+    .hero-card__title {
+      font-size: to-rem(26);
+      line-height: 1.38;
+    }
+
+    @include respond-to("tablet") {
+      grid-column: span 2;
+      grid-row: span 1;
+      min-height: to-rem(350);
+    }
+
+    @include respond-to("mobile") {
+      grid-column: span 1;
+    }
+  }
+}

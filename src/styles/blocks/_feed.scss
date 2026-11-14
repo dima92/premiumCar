@@ -1,0 +1,49 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.post-card {
+  margin-bottom: to-rem(60);
+
+  &__img-wrap {
+    border-radius: to-rem(5);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: to-rem(440);
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    position: relative;
+    background-color: $white-color;
+    border-radius: to-rem(5);
+    box-shadow: 0 to-rem(3) to-rem(15) rgba(0, 0, 0, 0.08);
+    padding: to-rem(30);
+    margin: to-rem(-120) to-rem(20) 0;
+
+    @include respond-to("mobile") {
+      margin: to-rem(-40) to-rem(15) 0;
+      padding: to-rem(20);
+    }
+  }
+
+  &__title {
+    font-size: to-rem(25);
+    margin: to-rem(20) 0 to-rem(15);
+    font-weight: 700;
+    line-height: 1.12;
+    color: $title-color;
+
+    @include hover {
+      color: $accent-color;
+    }
+  }
+
+  &__excerpt {
+    line-height: 1.71;
+    color: $text-color;
+    margin-top: to-rem(14);
+  }
+}

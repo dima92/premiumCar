@@ -1,0 +1,94 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.footer {
+  background-color: $black-color;
+  color: $white-color;
+  padding-top: to-rem(60);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 270px;
+    gap: to-rem(80);
+    padding-bottom: to-rem(50);
+
+    @include respond-to("tablet") {
+      grid-template-columns: 1fr;
+      gap: to-rem(40);
+    }
+  }
+
+  &__text {
+    font-size: to-rem(14);
+    color: $text-sec-color;
+    margin: to-rem(25) 0 to-rem(40);
+    max-width: to-rem(270);
+  }
+
+  &__title {
+    font-size: torem(20);
+    margin-bottom: torem(25);
+  }
+  &__subtitle {
+    font-size: torem(18);
+    margin-bottom: torem(15);
+  }
+
+  .socials {
+    display: flex;
+    gap: to-rem(15);
+
+    .social-link {
+      margin-top: to-rem(23);
+      width: to-rem(34);
+      height: to-rem(34);
+      background: $dark-color;
+      border-radius: to-rem(3);
+      @include flex(row, center, center);
+
+      @include hover {
+        background: $accent-color;
+      }
+    }
+  }
+
+  &-post {
+    display: flex;
+    gap: to-rem(20);
+    margin-bottom: to-rem(25);
+
+    img {
+      width: to-rem(95);
+      height: to-rem(95);
+      border-radius: to-rem(5);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    h5 {
+      font-size: to-rem(15);
+      line-height: 1.4;
+      margin-bottom: to-rem(8);
+
+      @include hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: $dark-sec-color;
+    padding: to-rem(35) 0;
+    font-size: to-rem(14);
+    color: $white-color;
+
+    &-inner {
+      @include flex(row, space-between, center);
+
+      @include respond-to("tablet-sm") {
+        flex-direction: column;
+        gap: to-rem(20);
+      }
+    }
+  }
+}

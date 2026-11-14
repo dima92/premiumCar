@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.most-popular {
+  margin-bottom: to-rem(80);
+
+  .section-title {
+    font-size: to-rem(30);
+    margin-bottom: to-rem(30);
+  }
+
+  &__grid {
+    @include grid(4, 30);
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to("mobile") {
+      grid-template-columns: 1fr;
+    }
+  }
+}

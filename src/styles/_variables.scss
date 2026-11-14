@@ -1,0 +1,28 @@
+@use "helpers/functions" as *;
+
+// Сетка
+$container-width: 1170;
+$container-padding-x: 15;
+
+// Анимации
+$transition-duration: 0.3s;
+$transition-base: all $transition-duration ease-in-out;
+
+// Шрифты
+$font-family: "PT Sans", sans-serif;
+$second-family: "Lato", sans-serif;
+
+// ==========================================================================
+// ЦВЕТОВАЯ ПАЛИТРА (UI-KIT) — ПРОЕКТ PREMIUM CAR
+// ==========================================================================
+
+$white-color: #fff;
+$black-color: #000;
+$accent-color: #4a90e2;
+$title-color: #171717;
+$dark-color: #373737;
+$dark-sec-color: #232323;
+$placeholder-color: #aeb3bb;
+$text-color: #666;
+$text-sec-color: #cecece;
+$border-color: #e5e5e5;
